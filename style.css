@@ -1,6 +1,17 @@
+
 body{
     background: hsl(218, 23%, 16%);
+    margin: 0%;
+}
+.main{
+    margin: 0%;
+    padding: 0%;
+    display:grid;
 }
 .card{
-
+    display: grid;
+    background-color: hsl(217, 19%, 24%);
+    height: 50vh;
+    margin: 30% 15px 0;
+    border-radius: 15px;
 }
