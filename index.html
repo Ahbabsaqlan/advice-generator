@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./script.js"></script>
+    
 
     <link rel="stylesheet" href="./style.css">      <!--main css link-->
     <link rel="icon" type="image/x-icon" href="./images/favicon-32x32.png">   <!--tittle fevicon-->
@@ -13,15 +13,29 @@
         <!--google font link-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Fuzzy+Bubbles:wght@700&family=Grandstander:wght@700&family=Karla:wght@400;700&family=Koulen&family=Luckiest+Guy&family=Mochiy+Pop+P+One&family=Open+Sans:wght@400;600;700&family=Permanent+Marker&family=Poppins:wght@700&family=Public+Sans:wght@300;400;700&family=Roboto+Flex:opsz,wght@8..144,500&family=Syne+Mono&family=Titan+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Fuzzy+Bubbles:wght@700&family=Grandstander:wght@700&family=Karla:wght@400;700&family=Koulen&family=Luckiest+Guy&family=Mochiy+Pop+P+One&family=Open+Sans:wght@400;600;700&family=Permanent+Marker&family=Poppins:wght@700&family=Manrope:wght@800&family=Public+Sans:wght@300;400;700&family=Roboto+Flex:opsz,wght@8..144,500&family=Syne+Mono&family=Titan+One&display=swap" rel="stylesheet">
     <title>Advice Generator</title>
 </head>
 <body>
     <div class="main">
         <div id="card">
+            <div id="loading" class="loading-container">
+                <div class="loding-animation-holder">
+                    <div class="loading-animator"></div>
+                    <div class="loading-animator"></div>
+                    <div class="loading-animator"></div>
+                    <div class="loading-animator"></div>
+                    <div class="middle-circle"></div>
+                </div>
+            </div>
             <p id="idpara"></p>
-            <p id="para"></p>
+            <p id="para" ></p>
+            <img src="./images/pattern-divider-mobile.svg" alt="pattern-divider-mobile" class="ptrn-m">
+            <img src="./images/pattern-divider-desktop.svg" alt="pattern-divider-desktop" class="ptrn-d">
         </div>
+        <button type="button" onclick="makeApiCall()" class="btn"><img src="./images/icon-dice.svg" alt="dise-button" class="dise"></button>
+        
     </div>
+    <script src="./script.js"></script>
 </body>
 </html>

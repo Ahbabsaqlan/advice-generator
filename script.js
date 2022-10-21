@@ -1,5 +1,5 @@
 // fetch("").then(data=>console.log(data.json()))
-console.log("masti")
+
 // const ul = 
 // fetch('https://jsonplaceholder.typicode.com/users')
 // 	.then(response => response.json())
@@ -12,16 +12,30 @@ console.log("masti")
 //         }
 //     })
 // 	.catch(err => console.error(err));
+let loadingAnimation = document.getElementById("loading")
+let idpara = document.getElementById('idpara')
+let para = document.getElementById('para')
+
+const makeApiCall =()=>{
+    console.log(loadingAnimation)
+    //start animation
+    loadingAnimation.style.opacity="1"
+    para.innerText='' 
+    para.className=""
 fetch('https://api.adviceslip.com/advice')
 .then(response => response.json()) //parsing js from json
 .then(data => { console.log(data.slip.advice)
-    let idpara = document.getElementById('idpara')
-    idpara.innerText=data.slip.id
-    let para = document.getElementById('para')
-    para.innerText=data.slip.advice         
+    // stop animation
+    loadingAnimation.style.opacity="0"
+    
+    idpara.innerText="ADVICE #"+data.slip.id
+    para.innerText='"'+data.slip.advice+'"'  
+    para.className="fade-in"       
 })
 .catch(err => console.error(err));
+}
 
+makeApiCall()
 //     fetch('https://api.adviceslip.com/advice')
 //     .then(response => response.json()) //parsing js from json
 //     .then(data => { console.log(data.slip.advice)

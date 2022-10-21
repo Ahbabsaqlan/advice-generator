@@ -8,6 +8,7 @@
 body{
     background: var(--Dark-Blue);
     margin: 0%;
+    font-family: 'Manrope', sans-serif;
 }
 .main{
     margin: 0%;
@@ -16,11 +17,146 @@ body{
 }
 #card{
     display: grid;
-    background-color: var(--Grayish-Blue);
-    height: 50vh;
-    margin: 30% 15px 0;
+    background-color: var(--Dark-Grayish-Blue);
+    min-height: 50vh;
+    margin: 30% 30px 0;
     border-radius: 15px;
+    justify-items: center;
+    grid-template-rows: 50px 1fr 70px;
+    position: relative;
+    
+}
+p{
+    text-align: center;
+    color: white;
 }
 #para{
-    text-align: center;
+    width: 80%;
+    font-size: 1.7em;
+    align-self: center;
+    transition: 5s;
+    transition-timing-function: ease-in;
+}
+
+#idpara{
+    color: var(--Neon-Green);
+    letter-spacing: 5px;
+}
+.ptrn-d{
+    display: none;
+}
+.ptrn-m{
+    width: 100%;
+}
+.btn{
+    border-radius: 50% ;
+    width: 60px;
+    height: 60px;
+    padding: 15px 15px;
+    position: relative;
+    margin: 0 auto;
+    background-color: var(--Neon-Green);
+    border: none;
+    transform: translateY(-30px);
+}
+/*LOADING*/
+.loading-container{
+    display:block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0px; left:0px;
+    z-index: 100;
+    transform: scale(0.5);
+    
+    opacity: 1;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    -webkit-transition: opacity 1s cubic-bezier(.83,.01,.75,.71);
+    -moz-transition: opacity 1s cubic-bezier(.83,.01,.75,.71);
+    -ms-transition: opacity 1s cubic-bezier(.83,.01,.75,.71);
+    -o-transition: opacity 1s cubic-bezier(.83,.01,.75,.71);
+    transition: opacity 1s cubic-bezier(.83,.01,.75,.71);
+}
+
+.loding-animation-holder{
+    width: 100px; height:100px;
+    transform:rotate(45deg);
+    position: relative;
+}
+
+.loading-animator{
+    width: 50%; height:50%;
+    float:left;
+    background: #368a79;
+    transform:rotate(0deg);
+    position:relative;
+    top:0px; left:0px;
+    bottom:0px; right:0px;
+    opacity: 1;
+}
+
+.loading-animator:nth-child(1){
+    transform-origin: bottom right;
+    animation:loading 3s cubic-bezier(.46,-0.1,.2,1.5) infinite;
+}
+
+.loading-animator:nth-child(2){
+    transform-origin: bottom left;
+    animation:loading 3s 0.3s cubic-bezier(.46,-0.1,.2,1.5) infinite;
+}
+
+.loading-animator:nth-child(4){
+    transform-origin: top left;
+    animation:loading 3s 0.4s cubic-bezier(.46,-0.1,.2,1.5) infinite;
+}
+
+.loading-animator:nth-child(3){
+    transform-origin: top right;
+    animation:loading 3s 0.5s cubic-bezier(.46,-0.1,.2,1.5) infinite;
+}
+
+@keyframes loading {
+    0%{
+        transform:rotate(0deg);
+        opacity: 1;
+    }
+    25%{
+        transform:rotate(90deg);
+        opacity: 0;
+    }
+    35%{
+        transform:rotate(-90deg);
+        opacity:0;
+    }
+    65%{
+        transform:rotate(0deg);
+        opacity: 1;
+    }
+}
+
+.middle-circle{
+    width: 5px; height: 5px;
+    position: absolute;
+    top:47.5px; left:47.5px;
+    border-radius: 100%;
+    border:1px solid #5bffde;
+    background: #3c4a5c;
+}
+
+.fade-in {
+	animation: fadeIn 1s;
+  	opacity: 1;
+}
+
+@keyframes fadeIn {
+  from {
+  	opacity: 0;
+    scale: 0.98;
+  }
+  to {
+ 	opacity: 1;
+    scale:1
+  }
 }
