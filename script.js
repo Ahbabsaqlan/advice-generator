@@ -17,7 +17,6 @@ let idpara = document.getElementById('idpara')
 let para = document.getElementById('para')
 
 const makeApiCall =()=>{
-    console.log(loadingAnimation)
     //start animation
     loadingAnimation.style.opacity="1"
     para.innerText='' 
@@ -27,7 +26,6 @@ fetch('https://api.adviceslip.com/advice')
 .then(data => { console.log(data.slip.advice)
     // stop animation
     loadingAnimation.style.opacity="0"
-    
     idpara.innerText="ADVICE #"+data.slip.id
     para.innerText='"'+data.slip.advice+'"'  
     para.className="fade-in"       

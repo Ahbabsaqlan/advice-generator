@@ -19,12 +19,14 @@ body{
     display: grid;
     background-color: var(--Dark-Grayish-Blue);
     min-height: 50vh;
-    margin: 30% 30px 0;
+    width:clamp(300px,40vw,500px);
+    margin: 150px auto 0;
     border-radius: 15px;
     justify-items: center;
     grid-template-rows: 50px 1fr 70px;
     position: relative;
-    
+    justify-self: center;
+    align-self: center;
 }
 p{
     text-align: center;
@@ -159,4 +161,13 @@ p{
  	opacity: 1;
     scale:1
   }
+}
+@media (min-width:770px){
+    .ptrn-d{
+        display: block;
+        width: 100%;
+    }
+    .ptrn-m{
+        display: none;
+    }
 }
