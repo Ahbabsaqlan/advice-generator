@@ -15,21 +15,21 @@ console.log("masti")
 fetch('https://api.adviceslip.com/advice')
 .then(response => response.json()) //parsing js from json
 .then(data => { console.log(data.slip.advice)
-    
+    let idpara = document.getElementById('idpara')
+    idpara.innerText=data.slip.id
     let para = document.getElementById('para')
-    para.innerText=data.slip.advice
-             
+    para.innerText=data.slip.advice         
 })
 .catch(err => console.error(err));
 
-    fetch('https://api.adviceslip.com/advice')
-    .then(response => response.json()) //parsing js from json
-    .then(data => { console.log(data.slip.advice)
-        let card = document.getElementById('card')
-        console.log(card)
-        let para = document.createElement('p')
-        para.innerText=data.slip.advice
-        card.appendChild(para)         
-    })
-    .catch(err => console.error(err));
+//     fetch('https://api.adviceslip.com/advice')
+//     .then(response => response.json()) //parsing js from json
+//     .then(data => { console.log(data.slip.advice)
+//         let card = document.getElementById('card')
+//         console.log(card)
+//         let para = document.createElement('p')
+//         para.innerText=data.slip.advice
+//         card.appendChild(para)         
+//     })
+//     .catch(err => console.error(err));
 
